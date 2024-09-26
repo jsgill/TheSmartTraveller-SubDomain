@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Typography } from "@mui/material";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 const ButtonCustom = ({
   content,
@@ -42,7 +43,7 @@ const ButtonCustom = ({
         {content}{" "}
       </Typography>
       {spanContent && (
-        <Typography variant="subtitle1">
+        <Typography variant="subtitle1" sx={{ color: "white" }}>
           &nbsp; &nbsp; &nbsp;+91 7807021868
         </Typography>
       )}

@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import {
-  Typography,
-  Box,
-  CardContent,
-  Card,
-  useTheme,
-  Button,
-  useMediaQuery,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 import Image from "next/future/image";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -153,6 +151,8 @@ const SectionC = () => {
           >
             <Image
               src={clientData[ind].img}
+              width={100}
+              height={100}
               alt="client avatar"
               style={{
                 width: matches ? 110 : 90,

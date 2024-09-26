@@ -1,7 +1,11 @@
 import React from "react";
-import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 import ButtonCustom from "./CustomButton";
 import CustomForm from "./CustomForm";
+import { bannerBackground } from "../public/imageData";
 import styles from "../styles/Home.module.css";
 
 const Banner = () => {
@@ -21,17 +25,24 @@ const Banner = () => {
       justifyContent="center"
       alignItems="center"
       className={styles.bannerBG}
+      style={{
+        background: `url(${bannerBackground})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        minHeight: "90vh",
+      }}
     >
       <Box
         display="flex"
         flexDirection={matchesMMD ? "column" : "row"}
         justifyContent={matchesMMD ? "start" : "space-around"}
-        width={matchesXL ? "80%" : "100%"}
+        width={matchesXL ? "90%" : "100%"}
         alignContent="center"
         alignItems="center"
         mt={matchesSM ? 9 : 13}
         mb={8}
-        px={matchesMD ? (matchesMMD ? 7 : matches ? 7 : 4) : 0}
+        px={matchesMD ? (matchesMMD ? 7 : matches ? 3.7 : 4) : 0}
         sx={{
           zIndex: "20",
         }}
@@ -84,30 +95,32 @@ const Banner = () => {
           >
             Lowest Price Guarnteed
           </Typography>
-          <ButtonCustom
-            row={matchesSM ? "false" : "true"}
-            content="Call Now!"
-            spanContent="+91 7807021868"
-            pdy={matchesSM ? "0.6rem" : "1rem"}
-            pdx={
-              matchesSM
-                ? matchesXSS
-                  ? matchesMD
-                    ? "2rem"
-                    : "1.8rem"
-                  : "1rem"
-                : matches
-                ? matchesLG
-                  ? matchesXL
-                    ? "4rem"
-                    : "3.7rem"
-                  : "3rem"
-                : "2rem"
-            }
-            mrg="5%"
-            mrgb="6%"
-            fill="true"
-          />
+          <a href="tel:7807021868" style={{ textDecoration: "none" }}>
+            <ButtonCustom
+              row={matchesSM ? "false" : "true"}
+              content="Call Now!"
+              spanContent="+91 7807021868"
+              pdy={matchesSM ? "0.6rem" : "1rem"}
+              pdx={
+                matchesSM
+                  ? matchesXSS
+                    ? matchesMD
+                      ? "2rem"
+                      : "1.8rem"
+                    : "1rem"
+                  : matches
+                  ? matchesLG
+                    ? matchesXL
+                      ? "4rem"
+                      : "3.7rem"
+                    : "3rem"
+                  : "2rem"
+              }
+              mrg="5%"
+              mrgb="6%"
+              fill="true"
+            />
+          </a>
         </Box>
         <CustomForm />
       </Box>
